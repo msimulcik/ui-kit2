@@ -10,23 +10,42 @@
     "lib",
     "umd"
   ],
+  "skpm": {
+    "main": "sketch/ui-kit.sketchplugin",
+    "manifest": "sketch/src/manifest.json"
+  },
   "scripts": {
-    "build": "nwb build-react-component",
+    "build": "nwb build-react-component --no-demo && build-storybook -o demo/dist",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "storybook": "start-storybook -p 6006",
+    "build:sketch": "skpm-build",
+    "watch:sketch": "skpm-build --watch",
+    "render:sketch": "skpm-build --watch --run",
+    "render:sketch:once": "skpm-build --run"
   },
   "dependencies": {},
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@skpm/builder": "^0.4.0",
+    "@storybook/addon-actions": "^4.0.7",
+    "@storybook/addon-links": "^4.0.7",
+    "@storybook/addons": "^4.0.7",
+    "@storybook/react": "^4.0.7",
+    "babel-loader": "^7.1.5",
     "nwb": "0.23.x",
+    "prop-types": "^15.5.8",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-sketchapp": "^2.0.0",
+    "react-test-renderer": "^16.3.2"
   },
   "author": "",
   "homepage": "",
