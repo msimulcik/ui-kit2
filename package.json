@@ -28,7 +28,12 @@
     "render:sketch": "skpm-build --watch --run",
     "render:sketch:once": "skpm-build --run"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@emotion/primitives": "^9.2.11",
+    "react-art": "^16.6.3",
+    "react-native-web": "^0.9.8",
+    "react-primitives": "^0.7.0"
+  },
   "peerDependencies": {
     "react": "16.x"
   },
